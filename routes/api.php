@@ -21,7 +21,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1', function ($api) {
-    $api->get('test', function() {
-        return 'Test Successful!';
-    });
+    $api->get('patients', 'App\Http\Controllers\PatientController@index');
 });
